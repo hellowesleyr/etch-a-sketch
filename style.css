@@ -1,0 +1,95 @@
+* {
+    z-index: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #36454F;
+    justify-content: baseline;
+}
+
+.header {
+    margin-bottom: 6vh;
+}
+
+.controls {
+    margin-left: 10vw;
+    margin-right: 50vw;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    font-size: 20px;
+    margin-right: 2vh;
+}
+
+.main-container {
+}
+
+
+.toggle-picker {
+    background-color: black;
+    height: 6vh;
+    width: 6vh;
+    margin: 3px;
+}
+
+.toggle-background-picker {
+    background-color: white;
+    height: 6vh;
+    width: 6vh;
+    margin: 3px;
+}
+
+.color-picker, .background-color-picker {
+    background-color:  #36454F ;
+    display: none;
+    flex-wrap: wrap;
+    z-index: 5;
+    height: 25vh;
+    width: 30vh;
+}
+
+
+.canvas {
+   
+    width: 90%;
+    display: flex;
+    border: solid;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.pixel, .select-pixel, .select-bg-pixel {
+    background-color: white;
+    margin: 1px;
+    height: 5vh;
+    width: 5vh;
+}
+
+.select-pixel, .select-bg-pixel {
+    height: 6vh;
+    width: 6vh;
+    margin: 3px;
+}
+
