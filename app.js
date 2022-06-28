@@ -26,7 +26,6 @@ for (let i = 0; i<12; i++)
 }
 
 
-
 lengthSlider.addEventListener("input", event => {
     console.log("changed");
     length = lengthSlider.value;
@@ -44,7 +43,13 @@ colorSelectPixels.forEach(pixel => {
 colorSelectBGPixels.forEach(pixel => {
     pixel.addEventListener("click", event => {
         currentBgColor = pixel.style.backgroundColor;
-        toggleBackgroundPicker.style.backgroundColor = currentBgColor;
+        toggleBackgroundPicker.style.backgroundColor = currentBgColor;            pixel[`written`]=true;
+        canvasPixels = Array.from(document.querySelectorAll(".pixel"));
+        canvasPixels.forEach(cPixel => {
+            if (cPixel['written']==false) {
+                cPixel.style.backgroundColor = currentBgColor;
+            } 
+        });
     })
 });
 
@@ -100,6 +105,8 @@ function drawCanvas() {
             pixel.className = "pixel";
             pixel.style.width = `${80/length}vh`;
             pixel.style.height = `${80/length}vh`;
+            pixel.written = false;
+            // pixel[`set=${false}`]
 
             div.appendChild(pixel)
         }
@@ -109,6 +116,8 @@ function drawCanvas() {
     pixels.forEach(pixel => {
         pixel.addEventListener("mouseover", event => {
             pixel.style.backgroundColor = currentColor;
+            pixel[`written`]=true;
+            console.log(pixel[`written`]);
         })
     });
     
